@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+        }
+        .calculator {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+        }
+        .calculator .display {
+            background-color: #222;
+            color: white;
+            font-size: 2em;
+            text-align: right;
+            padding: 20px;
+        }
+        .calculator .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .calculator button {
+            padding: 20px;
+            font-size: 1.5em;
+            border: 1px solid #e5d7d7;
+            background-color: #a29696;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .calculator button:hover {
+            background-color: #ddd;
+        }
+        .calculator button.operator {
+            background-color: #ac7221;
+        }
+        .calculator button.operator:hover {
+            background-color: #927244;
+        }
+        .calculator button.equals {
+            background-color: #378937;
+            grid-column: span 4;
+        }
+        .calculator button.equals:hover {
+            background-color: #2db92d;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="operator" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="deleteLast()">⌫</button>
+            <button class="operator" onclick="appendOperator('/')">÷</button>
+            <button class="operator" onclick="appendOperator('*')">×</button>
+
+            <button onclick="appendNumber(7)">7</button> 
+            <button onclick="appendNumber(8)">8</button>
+            <button onclick="appendNumber(9)">9</button>
+            <button class="operator" onclick="appendOperator('-')">-</button>
+
+            <button onclick="appendNumber(4)">4</button>
+            <button onclick="appendNumber(5)">5</button>
+            <button onclick="appendNumber(6)">6</button>
+            <button class="operator" onclick="appendOperator('+')">+</button>
+
+            <button onclick="appendNumber(1)">1</button>
+            <button onclick="appendNumber(2)">2</button>
+            <button onclick="appendNumber(3)">3</button>
+            <button onclick="appendNumber(0)">0</button>
+
+            <button onclick="appendNumber('.')">.</button>
+            <button class="equals" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById('display');
+        let currentInput = '';
+        let currentOperator = '';
+        let resultDisplayed = false;
+
+        function appendNumber(number) {
+            if (resultDisplayed) {
+                currentInput = '';
+                resultDisplayed = false;
+            }
+            currentInput += number;
+            display.textContent = currentInput;
+        }
+
+        function appendOperator(operator) {
+            if (currentInput === '' && operator !== '-') {
+                return;
+            }
+            if (resultDisplayed) {
+                resultDisplayed = false;
+            }
+            if (currentOperator) {
+                calculate();
+            }
+            currentOperator = operator;
+            currentInput += ' ' + operator + ' ';
+            display.textContent = currentInput;
+        }
+
+        function calculate() {
+            try {
+                let result = eval(currentInput.replace('×', '*').replace('÷', '/'));
+                display.textContent = result;
+                currentInput = result.toString();
+                currentOperator = '';
+                resultDisplayed = true;
+            } catch {
+                display.textContent = 'Error';
+                currentInput = '';
+                currentOperator = '';
+            }
+        }
+
+        function clearDisplay() {
+            currentInput = '';
+            currentOperator = '';
+            display.textContent = '0';
+        }
+
+        function deleteLast() {
+            if (currentInput) {
+                currentInput = currentInput.slice(0, -1);
+                display.textContent = currentInput || '0';
+            }
+        }
+    </script>
+</body>
+</html>
