@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admiration Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            width: 80%;
+            margin: 2em auto;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .intro h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+        }
+        .intro p {
+            font-size: 1.2em;
+            color: #555;
+        }
+        .image {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+        .image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .content {
+            background-color: white;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .content h3 {
+            color: #4CAF50;
+            margin-top: 0;
+        }
+        .content p {
+            margin: 1em 0;
+            font-size: 1.1em;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 2em;
+        }
+        .author {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.2em;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admiration Page for Aviral</h1>
+        <div class="author">Aviral Bhadouria</div>
+    </header>
+    <div class="container">
+        <div class="intro">
+            <h2>Why I Admire Aviral</h2>
+            <p>Here are some reasons why Aviral is an inspiration to me and many others.</p>
+        </div>
+        <div class="image">
+            <img src="kkkX.png" alt="Picture of Aviral">
+        </div>
+        <div class="content">
+            <h3>Inspiration and Leadership</h3>
+            <p>Aviral has demonstrated exceptional leadership qualities. Their ability to inspire and motivate those around them is truly remarkable. Whether through words or actions, they consistently uplift and guide their peers, making a significant impact in their community.</p>
+            
+            <h3>Compassion and Empathy</h3>
+            <p>One of the most admirable traits of Aviral is their deep sense of compassion and empathy. They always take the time to listen and understand others, offering support and kindness whenever it is needed. Their selflessness and genuine concern for others make them a beloved figure to all who know them.</p>
+            
+            <h3>Dedication and Hard Work</h3>
+            <p>Aviral exemplifies dedication and hard work in everything they do. They never shy away from challenges and consistently put in the effort required to achieve their goals. Their perseverance and strong work ethic serve as an excellent example to everyone striving for success.</p>
+            
+            <h3>Positive Impact on Society</h3>
+            <p>Through various initiatives and projects, Aviral has made a positive impact on society. Their contributions have not only improved the lives of individuals but also fostered a sense of community and belonging. Their efforts in making the world a better place are truly commendable.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Admiration Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>
