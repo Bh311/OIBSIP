@@ -1,0 +1,62 @@
+create database hunarintern1;
+use hunarintern1;
+CREATE TABLE Student (
+    RollNo INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Marks INT,
+    Aadhar_Number VARCHAR(12) UNIQUE,
+    Address VARCHAR(255)
+);
+
+CREATE TABLE Course (
+    RollNo INT,
+    Course VARCHAR(100),
+    Course_Duration INT,
+    FOREIGN KEY (RollNo) REFERENCES Student(RollNo)
+);
+
+INSERT INTO Student (RollNo, Name, Marks, Aadhar_Number, Address) VALUES
+(1, 'Avi Sharma', 85, '123456789012', 'Delhi'),
+(2, 'Ananya Verma', 52, '234567890123', 'Mumbai'),
+(3, 'Rihaan Singh', 78, '345678901234', 'Bangalore'),
+(4, 'Raj Patel', 88, '456789012345', 'Chennai'),
+(5, 'Kushank Bansal', 79, '567890123456', 'Kolkata'),
+(6, 'Priya Gupta', 30, '567890121456', 'Benglore'),
+(7, 'Ayush Sharma', 30, '567890129456', 'Mumbai'),
+(8, 'Aviral Gupta', 59, '567890122456', 'Kanpur'),
+(9, 'Shivi Kumar', 29, '567895124456', 'Gwalior'),
+(10, 'Ram Gupta', 31, '567890126456', 'Etawah');
+
+INSERT INTO Course (RollNo, Course, Course_Duration) VALUES
+(1, 'B.tech', 4),
+(2, 'BCA', 3),
+(3, 'DCA', 1),
+(4, 'BCA', 3),
+(5, 'BBA', 3),
+(6, 'LAW', 5),
+(7, 'Pharma', 4),
+(8, 'CSE', 4),
+(9, 'CSE', 4),
+(10, 'MBA', 2);
+
+//Calculate the average of marks.
+
+SELECT AVG(Marks) AS Average_Marks FROM Student;
+
+// Arrange names in ascending order.
+
+SELECT Name FROM Student ORDER BY Name ASC;
+
+// Extract RollNo and names of students
+ scoring below 30 out of 100.
+
+SELECT RollNo, Name FROM Student WHERE Marks < 30;
+
+// Extract RollNo of students whose names
+ start with 'R'.
+
+SELECT RollNo FROM Student WHERE Name LIKE 'R%';
+
+ // Extract RollNo of students pursuing BCA.
+
+SELECT RollNo FROM Course WHERE Course = 'BCA';
