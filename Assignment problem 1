@@ -1,0 +1,33 @@
+import numpy as np
+
+# Get the order of the matrix from the user
+order = input("Enter the order of the matrix (e.g., 2x2, 3x3): ")
+n = int(order.split('x')[0])
+
+# Initialize an empty list to store the matrix elements
+matrix_elements = []
+
+# Get the matrix values from the user
+print("Enter the matrix values row by row:")
+for i in range(n):
+    row = list(map(int, input().split()))
+    matrix_elements.append(row)
+
+# Convert the list of lists into a numpy array
+matrix = np.array(matrix_elements)
+
+# Calculate the sum of diagonal elements
+diagonal_sum = 0
+for i in range(n):
+    diagonal_sum += matrix[i, i]
+
+# Print the sum of the diagonal elements
+print("Sum of diagonal elements:", diagonal_sum)
+
+# output
+Enter the order of the matrix (e.g., 2x2, 3x3): 3x3
+Enter the matrix values row by row:
+2 4 5
+4 7 8
+6 4 1
+Sum of diagonal elements: 10
